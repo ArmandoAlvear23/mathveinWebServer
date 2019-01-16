@@ -1,0 +1,9 @@
+php_value display_errors 1
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{Request_URI}[L,R=301]
+
+<Limit GET>
+deny from all
+</Limit>
